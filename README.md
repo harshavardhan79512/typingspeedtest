@@ -1,25 +1,25 @@
-# ⌨ TypeRacer — Typing Speed Test
+#  TypeRacer — Typing Speed Test
 
 A typing speed test web app built with React + Vite.
 
-🔗 **Live Demo:** https://harshavardhan79512.github.io/typingspeedtest/
+🔗 Live Demo: https://harshavardhan79512.github.io/typingspeedtest/
 
 ---
 
 ## Features
 
-- ✅ Real-time WPM and accuracy tracking
-- ✅ 4 difficulty levels — Easy, Medium, Hard, Tricky
-- ✅ Story Mode with 5 classic fables
-- ✅ Stopwatch and Countdown timer modes
-- ✅ Personal best WPM saved to localStorage
-- ✅ Full results history tab
-- ✅ FAQ accordion section
+-  Real-time WPM and accuracy tracking
+-  4 difficulty levels — Easy, Medium, Hard, Tricky
+-  Story Mode with 5 classic fables
+-  Stopwatch and Countdown timer modes
+-  Personal best WPM saved to localStorage
+-  Full results history tab
+-  FAQ accordion section
 
 ---
 
 ## How to Run
-```bash
+''' bash
 git clone https://github.com/harshavardhan79512/typingspeedtest.git
 cd typingspeedtest
 npm install

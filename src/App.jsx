@@ -168,6 +168,7 @@ const DIFF_META = {
 
 export default function App() {
   const [theme, setTheme]           = useState(() => localStorage.getItem("typingTheme") || "dark");
+  const [openFaq, setOpenFaq]       = useState(null);
   const [mode, setMode]             = useState("stopwatch");
   const [view, setView]             = useState("test");
   const [difficulty, setDifficulty] = useState("medium");
@@ -190,7 +191,6 @@ export default function App() {
   const inputRef = useRef(null);
   const timerRef = useRef(null);
 
-  // Keep <html> in sync so body background follows the theme
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
@@ -482,6 +482,26 @@ export default function App() {
           )}
         </>
       )}
+
+      <section className="faq-section">
+        <h2 className="faq-heading">Frequently Asked Questions</h2>
+        <div className="faq-list">
+          {[
+            { q: "What is a good typing speed?", a: "For most people, 40–60 WPM is considered average. Touch typists typically reach 60–80 WPM, while professional typists often exceed 80 WPM. Competitive typists can surpass 120 WPM." },
+            { q: "How is WPM calculated?", a: "WPM (Words Per Minute) is calculated by dividing the total number of characters typed by 5 (the average word length), then dividing by the number of minutes elapsed. Only correctly typed characters count." },
+            { q: "What does accuracy mean?", a: "Accuracy is the percentage of characters you typed correctly out of all characters attempted. An accuracy above 95% is considered good. Aim for both speed and accuracy — rushing and making mistakes slows you down overall." },
+            { q: "How do I improve my typing speed?", a: "Practice consistently every day, focus on accuracy before speed, use all ten fingers, and avoid looking at the keyboard. Start with easier texts and gradually move to harder ones as you improve." },
+          ].map((item, i) => (
+            <div key={i} className={`faq-item ${openFaq === i ? "open" : ""}`}>
+              <button className="faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                {item.q}
+                <span className="faq-icon">{openFaq === i ? "−" : "+"}</span>
+              </button>
+              {openFaq === i && <div className="faq-answer">{item.a}</div>}
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

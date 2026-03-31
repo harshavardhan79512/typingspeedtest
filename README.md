@@ -3,10 +3,10 @@ A typing speed test web app built with React + Vite.
 🔗 Live Demo: https://harshavardhan79512.github.io/typingspeedtest/
 ---
 Features Implemented
-Real-time WPM, accuracy, and progress tracking
-5 difficulty levels — Easy, Medium, Hard, Tricky, Story
-Stopwatch and Countdown timing modes
-Story Mode with 5 multi-chapter stories
+.Real-time WPM, accuracy, and progress tracking
+.5 difficulty levels — Easy, Medium, Hard, Tricky, Story
+.Stopwatch and Countdown timing modes
+.Story Mode with 5 multi-chapter stories
 Dark / Light theme toggle (saved to localStorage)
 Personal best WPM tracking
 Full results history tab

@@ -190,6 +190,11 @@ export default function App() {
   const inputRef = useRef(null);
   const timerRef = useRef(null);
 
+  // Keep <html> in sync so body background follows the theme
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   const currentText = (() => {
     if (difficulty === "story" && selectedStory !== null)
       return STORIES[selectedStory].chapters[chapterIndex % STORIES[selectedStory].chapters.length];
@@ -318,7 +323,7 @@ export default function App() {
         </div>
         <div className="header-right">
           <div className="best-badge">🏆 {bestWPM > 0 ? `${bestWPM} WPM` : "—"}</div>
-          <button className="theme-toggle" onClick={(e) => { e.stopPropagation(); setTheme(t => t === "dark" ? "light" : "dark"); }}>
+          <button className="theme-toggle" onClick={(e) => { e.stopPropagation(); setTheme(t => { const next = t === "dark" ? "light" : "dark"; localStorage.setItem("typingTheme", next); return next; }); }}>
             {theme === "dark" ? "☀️" : "🌙"}
           </button>
           <div className="nav-tabs">

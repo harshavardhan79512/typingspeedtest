@@ -29,12 +29,52 @@
   --radius-sm:  8px;
 }
 
+/* ── Light theme ─────────────────────────────────────────── */
+:root[data-theme="light"], [data-theme="light"] {
+  --bg:         #f4f3f0;
+  --bg-card:    #ffffff;
+  --bg-stat:    #eeecea;
+  --border:     #d6d3cc;
+  --text:       #1a1a1f;
+  --text-muted: #7a7870;
+  --text-dim:   #c2bfb8;
+  --accent:     #d4840a;
+  --correct:    #16a34a;
+  --wrong-bg:   #ff4d4d22;
+  --wrong-txt:  #dc2626;
+  --cursor:     #d4840a;
+  --good:       #16a34a;
+  --warn:       #ca8a04;
+  --danger:     #dc2626;
+  --easy:       #16a34a;
+  --medium:     #d4840a;
+  --hard:       #dc2626;
+  --tricky:     #7c3aed;
+  --story:      #0284c7;
+}
+
 body {
   background: var(--bg); color: var(--text); font-family: var(--font-sans);
   min-height: 100vh; display: flex; align-items: flex-start;
   justify-content: center; padding: 2rem 1rem 4rem;
+  transition: background 0.25s ease, color 0.25s ease;
 }
+
+/* ── Theme toggle button ──────────────────────────────────── */
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.1rem; height: 2.1rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-stat);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.15s, background 0.15s, transform 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--accent); transform: rotate(20deg); }
 .app { width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 1.1rem; }
+.app, .app * { transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease; }
 
 .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
 .logo { display: flex; align-items: center; gap: 0.5rem; }
